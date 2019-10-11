@@ -1,0 +1,79 @@
+:root {
+  --spacing--small: 8px;
+  --spacing: 16px;
+  --spacing--large: 24px
+  --spacing--x-large: 32px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 16px;
+  line-height: 24px;
+
+  max-width: 95vw;
+  margin: 0 auto;
+  padding: 0;
+}
+
+@media screen and (min-width: 900px) {
+  body {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing);
+  }
+
+  .portfolio {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+    grid-template-rows: repeat(4, 1fr);
+    gap: var(--spacing);
+  }
+
+  footer {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(1fr, 200px));
+    grid-template-rows:1fr;
+    gap: var(--spacing);
+  }
+} 
+
+.logo {
+  grid-column: 1 /3;
+}
+nav {
+  grid-column: 3 / -1;
+}
+
+.banner {
+  grid-column: 1 / -1;
+  grid-template-rows: 1fr;
+}
+/* Portfolio Grid */
+
+.portfolio {
+  width: 95vw;
+  margin: 0 auto;
+}
+
+.portfolio div {
+  border-radius: 1rem;
+  padding: 1rem;
+  margin: 2vh auto;
+}
+.item-one { grid-area: 1 / 1 / 3 / 3; border: 1px solid green; }
+.item-two { grid-area: 3 / 1 / 5 / 3; border: 1px solid green;}
+.item-three { grid-area: 1 / 3 / 5 / 5; border: 1px solid green;}
+
+.sub-banner {
+  grid-column: 1 /-1;
+}
+
+footer div {
+  grid-column: span 2;
+}
+
